@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.querySelector(".sidebar");
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
   const currentPage = document.body.dataset.page;
@@ -14,22 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const closeMobileMenu = () => {
+    menu.classList.remove("is-open");
+    sidebar?.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
   menuToggle.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("is-open");
+    sidebar?.classList.toggle("is-open", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      menu.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      closeMobileMenu();
     });
   });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 960) {
-      menu.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      closeMobileMenu();
     }
   });
 });

@@ -770,28 +770,37 @@ ol {
     font-size: clamp(2rem, 7vw, 3rem);
   }
 
-  .sidebar-tagline,
-  .sidebar-meta {
-    display: none;
-  }
-
-  .sidebar-contact {
-    padding-top: 1rem;
-    border-top: 0;
-  }
-
   .menu-toggle {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .menu {
     display: none;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   .menu.is-open {
     display: grid;
+  }
+
+  .sidebar-tagline {
+    display: none;
+  }
+
+  .sidebar-contact {
+    display: none;
+    padding-top: 1rem;
+    border-top: 0;
+  }
+
+  .sidebar.is-open .sidebar-contact {
+    display: block;
+  }
+
+  .sidebar.is-open .sidebar-tagline {
+    display: block;
+    margin: 1rem 0 1.25rem;
   }
 
   .menu a,
@@ -833,8 +842,36 @@ ol {
   }
 
   .sidebar-inner {
-    padding: 1.1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
     border-radius: 1.25rem;
+  }
+
+  .logo {
+    min-width: 0;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .sidebar-tagline,
+  .menu,
+  .sidebar-contact {
+    grid-column: 1 / -1;
+  }
+
+  .sidebar-tagline {
+    display: none;
+    font-size: 0.95rem;
+  }
+
+  .menu-toggle {
+    justify-self: end;
+    padding: 0.5rem;
   }
 
   .page-hero .container,
@@ -860,7 +897,6 @@ ol {
   .button,
   .menu-cta,
   .contact-actions,
-  .whatsapp-float,
   .footer-content .button {
     width: 100%;
   }
@@ -874,12 +910,14 @@ ol {
   }
 
   .whatsapp-float {
-    right: 0.75rem;
-    bottom: 0.75rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
     min-width: 0;
-    min-height: 3rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    min-height: 2.6rem;
+    width: auto;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+    box-shadow: 0 12px 24px rgba(17, 170, 72, 0.26);
   }
 }
 
