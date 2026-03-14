@@ -67,6 +67,7 @@ ol {
 .page-shell {
   min-height: 100vh;
   position: relative;
+  overflow-x: clip;
 }
 
 .container {
@@ -719,7 +720,7 @@ ol {
 
 @media (max-width: 960px) {
   .sidebar {
-    position: sticky;
+    position: relative;
     width: 100%;
     height: auto;
     padding: 1rem;
@@ -732,6 +733,11 @@ ol {
 
   .main-content {
     margin-left: 0;
+  }
+
+  .hero,
+  .page-hero {
+    padding-top: 2rem;
   }
 
   .hero-grid,
@@ -751,6 +757,29 @@ ol {
     align-items: flex-start;
   }
 
+  .hero-copy h1 {
+    max-width: 14ch;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+  }
+
+  .page-hero h1,
+  .section-heading h2,
+  .about-panel h2,
+  .contact-box h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .sidebar-tagline,
+  .sidebar-meta {
+    display: none;
+  }
+
+  .sidebar-contact {
+    padding-top: 1rem;
+    border-top: 0;
+  }
+
   .menu-toggle {
     display: inline-block;
     margin-bottom: 1rem;
@@ -764,15 +793,24 @@ ol {
   .menu.is-open {
     display: grid;
   }
+
+  .menu a,
+  .menu-cta {
+    min-height: 3rem;
+  }
 }
 
 @media (max-width: 640px) {
+  .container {
+    width: min(100% - 1.25rem, 100%);
+  }
+
   .section {
-    padding: 4rem 0;
+    padding: 3.25rem 0;
   }
 
   .hero {
-    padding-top: 3.5rem;
+    padding-top: 1.5rem;
   }
 
   .hero-home {
@@ -785,15 +823,38 @@ ol {
     max-width: 100%;
   }
 
+  .hero-actions {
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
   .sidebar {
-    padding: 0.75rem;
+    padding: 0.75rem 0.625rem 0;
+  }
+
+  .sidebar-inner {
+    padding: 1.1rem;
+    border-radius: 1.25rem;
   }
 
   .page-hero .container,
   .about-panel,
   .contact-box,
   .footer-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .service-card,
+  .point-card,
+  .testimonial-card,
+  .portfolio-card,
+  .coverage-card,
+  .faq-item,
+  .metric-card,
+  .process-card,
+  .service-panel {
+    padding: 1.15rem;
+    border-radius: 1.15rem;
   }
 
   .button,
@@ -806,6 +867,19 @@ ol {
 
   .contact-actions {
     min-width: 100%;
+  }
+
+  .footer-content h2 {
+    max-width: 100%;
+  }
+
+  .whatsapp-float {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
   }
 }
 
