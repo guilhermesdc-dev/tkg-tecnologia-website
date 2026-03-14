@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TKG Tecnologia">
+  <defs>
+    <linearGradient id="tkg-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#39d0ff" />
+      <stop offset="100%" stop-color="#0f5fff" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#04111d" />
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="url(#tkg-gradient)" />
+  <path d="M18 23h28v6H35v18h-7V29H18zm22 8 7-8h-8l-7 8 7 16h8z" fill="#04111d" />
+</svg>

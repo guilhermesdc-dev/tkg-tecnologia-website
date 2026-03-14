@@ -1,0 +1,13 @@
+{
+  "name": "tkg-tecnologia-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional estático da TKG Tecnologia",
+  "scripts": {
+    "dev": "node tools/dev-server.js",
+    "start": "node tools/dev-server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
